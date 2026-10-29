@@ -1,0 +1,7 @@
+Flask
+Flask-SQLAlchemy
+python-dotenv
+google-genai
+pdfplumber
+scikit-learn
+pytest

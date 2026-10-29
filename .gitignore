@@ -1,0 +1,10 @@
+.env
+__pycache__/
+*.pyc
+instance/
+*.db
+uploads/*
+!uploads/.gitkeep
+venv/
+.pytest_cache/
+data/candidates.jsonl

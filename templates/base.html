@@ -1,0 +1,12 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{% block title %}Resume Screener{% endblock %}</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}"></head>
+<body>
+<header><a class="brand" href="{{ url_for('home') }}">Resume Screener</a>
+<nav><a href="{{ url_for('home') }}">New screening</a><a href="{{ url_for('history') }}">History</a></nav></header>
+<main>
+{% for m in get_flashed_messages() %}<p class="flash" role="alert">{{ m }}</p>{% endfor %}
+{% block content %}{% endblock %}
+</main></body></html>

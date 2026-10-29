@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block title %}Results{% endblock %}
+{% block content %}
+<h1>Screening results</h1>
+<section class="panel">
+  <h2>Skills required</h2>
+  <p>{% for s in run.jd_skills %}<span class="tag">{{ s }}</span>{% else %}<span class="muted">No known skills detected, ranked by text similarity only.</span>{% endfor %}</p>
+  {% if run.jd_analysis %}
+  <p><strong>{{ run.jd_analysis.get('role', '') }}</strong>
+     {% if run.jd_analysis.get('seniority') %}({{ run.jd_analysis.seniority }}){% endif %}</p>
+  <p>{{ run.jd_analysis.get('summary', '') }}</p>
+  {% else %}<p class="muted">AI analysis unavailable (add GEMINI_API_KEY to .env). Ranking still works.</p>{% endif %}
+</section>
+<p class="muted">Final score = {{ sw }}% skill match + {{ tw }}% text similarity.</p>
+<div class="scroll"><table>
+<thead><tr><th>Rank</th><th>Candidate</th><th>Score</th><th>Skills</th><th>Text</th><th>Matched</th><th>Missing</th></tr></thead>
+<tbody>
+{% for r in run.results %}
+<tr class="{{ 'mine' if r.uploaded }}">
+ <td>{{ r.rank }}</td>
+ <td>{{ r.name }}{% if r.uploaded %} <span class="tag up">uploaded</span>{% endif %}</td>
+ <td><strong>{{ r.score }}%</strong></td><td>{{ r.skill_score }}%</td><td>{{ r.text_score }}%</td>
+ <td>{% for s in r.matched %}<span class="tag ok">{{ s }}</span>{% endfor %}</td>
+ <td>{% for s in r.missing %}<span class="tag no">{{ s }}</span>{% endfor %}</td>
+</tr>{% endfor %}
+</tbody></table></div>
+{% endblock %}

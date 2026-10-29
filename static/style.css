@@ -1,0 +1,20 @@
+:root{--bg:#f6f7f9;--fg:#1c2330;--muted:#667085;--panel:#fff;--line:#d9dde4;--accent:#1f4fd8;--ok:#e3f4e8;--okfg:#15683a;--no:#fdeaea;--nofg:#9c2a2a}
+@media (prefers-color-scheme:dark){:root{--bg:#12161d;--fg:#e8ebf0;--muted:#98a2b3;--panel:#1a202a;--line:#2c3442;--accent:#7aa2ff;--ok:#16301f;--okfg:#7fd9a0;--no:#3a1c1c;--nofg:#f0a3a3}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.55 system-ui,-apple-system,"Segoe UI",sans-serif}
+header{display:flex;justify-content:space-between;gap:1rem;padding:1rem 1.5rem;border-bottom:1px solid var(--line);background:var(--panel)}
+.brand{font-weight:700;color:var(--fg);text-decoration:none}nav a{margin-left:1rem;color:var(--accent)}
+main{max-width:1100px;margin:0 auto;padding:1.5rem}
+h1{font-size:1.6rem;margin:.2rem 0 .8rem}.muted{color:var(--muted)}
+label{display:block;margin:1rem 0 .3rem;font-weight:600}
+textarea,input[type=file]{width:100%;padding:.7rem;border:1px solid var(--line);border-radius:6px;background:var(--panel);color:var(--fg);font:inherit}
+button{margin-top:1.2rem;padding:.7rem 1.4rem;border:0;border-radius:6px;background:var(--accent);color:#fff;font:inherit;font-weight:600;cursor:pointer}
+:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+.flash{padding:.7rem 1rem;background:var(--no);color:var(--nofg);border-radius:6px}
+.panel{background:var(--panel);border:1px solid var(--line);border-radius:6px;padding:1rem 1.2rem;margin-bottom:1rem}
+.scroll{overflow-x:auto}table{width:100%;border-collapse:collapse;background:var(--panel)}
+th,td{padding:.6rem .7rem;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+tr.mine{background:var(--ok)}
+.tag{display:inline-block;margin:0 .25rem .25rem 0;padding:.05rem .5rem;border-radius:999px;border:1px solid var(--line);font-size:.85rem}
+.tag.ok{background:var(--ok);color:var(--okfg);border-color:transparent}.tag.no{background:var(--no);color:var(--nofg);border-color:transparent}
+.tag.up{background:var(--accent);color:#fff;border-color:transparent}

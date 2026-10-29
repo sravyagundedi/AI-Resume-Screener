@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>Rank candidates against a job description</h1>
+<p class="muted">Your uploaded resumes are ranked alongside {{ total }} candidates from the dataset.</p>
+<form action="{{ url_for('rank') }}" method="post" enctype="multipart/form-data">
+  <label for="jd">Job description</label>
+  <textarea id="jd" name="jd" rows="10" required placeholder="Paste the full job description"></textarea>
+  <label for="resume">Resumes (PDF or TXT, optional, several allowed)</label>
+  <input id="resume" type="file" name="resume" accept=".pdf,.txt" multiple>
+  <button type="submit">Rank candidates</button>
+</form>
+{% endblock %}
