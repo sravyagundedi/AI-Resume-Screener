@@ -1,4 +1,4 @@
-# AI Resume Screening System (Code-A-Nova, Level 1a)
+# AI Resume Screening System
 
 Flask app that extracts resume text, matches skills against a job description, and ranks candidates.
 
@@ -23,3 +23,6 @@ pytest
 
 ## Flow
 Upload resumes + paste JD, extract text, extract JD skills (vocab + Gemini), score every candidate, save run, show results.
+
+NOTE:
+The repo includes data/sample_candidates.jsonl (500 records). To use the full dataset, place it at data/candidates.jsonl; the app will pick it up automatically.
